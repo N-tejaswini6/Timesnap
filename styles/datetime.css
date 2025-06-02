@@ -1,0 +1,59 @@
+.datetime-display {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+  box-shadow: 0 4px 12px var(--shadow);
+  border: 1px solid var(--border);
+  transition: all var(--transition-normal);
+}
+
+.time {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.date-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 2px solid var(--border);
+  padding-left: var(--space-lg);
+}
+
+.day {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.date {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .datetime-display {
+    flex-direction: column;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .date-wrapper {
+    border-left: none;
+    border-top: 2px solid var(--border);
+    padding-left: 0;
+    padding-top: var(--space-md);
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,91 @@
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes blinkColon {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Applied animations */
+.stopwatch-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.laps-container {
+  animation: fadeIn 0.7s ease-out;
+}
+
+.lap-item {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Running stopwatch animations */
+.running .separator {
+  animation: blinkColon 1s infinite;
+}
+
+.running .milliseconds span:first-child {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Theme transition */
+.theme-transition {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Button animations */
+.control-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* Glow effect for active stopwatch */
+.running .stopwatch-container {
+  box-shadow: 0 8px 30px rgba(var(--accent-rgb, 0, 122, 255), 0.15);
+  border-color: var(--accent);
+}
+
+/* Hover animation for lap items */
+.lap-item:hover {
+  transform: translateX(5px);
+  transition: transform 0.2s ease;
+}
